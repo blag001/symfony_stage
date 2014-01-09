@@ -1,0 +1,12 @@
+fonctionnalitée pour le projet sur synfony :
+	consulter un étudiant
+	une liste d'étudiant
+	consulter une entreprise
+	une liste d'entreprise
+	un stage
+	une liste de stage
+
++ penser à ajouter les liens list => page mono
+pour le moment, pas de formulaire de saisie
+
+A envoyer juste avant les vaccances scolaire de paque (28 fevrier)
