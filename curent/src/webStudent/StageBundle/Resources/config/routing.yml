@@ -1,0 +1,18 @@
+web_student_stage_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: webStudentStageBundle:Stage:index }
+SalutStage:
+    pattern:  /salutStage/{name}
+    defaults: { _controller: webStudentStageBundle:Stage:index }
+Stage_accueil:
+    path:    /stage
+    defaults: { _controller: webStudentStageBundle:Stage:index }
+Stage_consulter:
+    path:    /stage/stage/{id}
+    defaults: { _controller:webStudentStageBundle:Stage:consulter }
+Stage_ajouter:
+    path:    /stage/ajouter
+    defaults: { _controller: webStudentStageBundle:Stage:ajouter }
+Stage_modifier:
+    path:    /stage/modifier
+    defaults: { _controller: webStudentStageBundle:Stage:modifier }

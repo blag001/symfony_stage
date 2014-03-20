@@ -1,0 +1,27 @@
+{# src/webStudent/EtudiantBundle/Resources/Etudiant/index.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Voici les etudiant que vous avez selectionné</title>
+	</head>
+	<table border='1'>
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Informations</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for etudiant in listeEtudiants %}
+				<tr>
+					<td>{{ etudiant.code }}</td>
+					<td>{{ etudiant.nom }}</td>
+					<td>{{ etudiant.prenom }}</td>
+					<td><a href="{{ path('Etudiant_ConsulterInfosE', { 'code': etudiant.code }) }}"> Voir</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</html>
