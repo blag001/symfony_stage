@@ -63,6 +63,21 @@ class Utilisateur
      
      private $adresse;
 	 
+	          /**
+     * @var string
+     *
+     * @ORM\Column(name="tel", type="string", length=20)
+     */
+     
+     private $tel;
+	 
+	 	          /**
+     * @var string
+     *
+     * @ORM\Column(name="mail", type="string", length=50)
+     */
+     
+     private $mail;
     /**
      * Get id
      *
@@ -84,6 +99,27 @@ class Utilisateur
     {
         return $this->adresse;
     }
+		        /**
+     * Get tel
+     *
+     * @return string
+     */
+    
+    public function getTel()
+    {
+        return $this->tel;
+    }
+	
+			        /**
+     * Get mail
+     *
+     * @return string
+     */
+    
+    public function getMail()
+    {
+        return $this->mail;
+    }
 
     /**
      * Set adresse
@@ -94,6 +130,32 @@ class Utilisateur
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
+    
+        return $this;
+    }
+	
+	 /**
+     * Set tel
+     *
+     * @param string $tel
+     * @return Utilisateur
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    
+        return $this;
+    }
+	
+		 /**
+     * Set tel
+     *
+     * @param string $tel
+     * @return Utilisateur
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
     
         return $this;
     }

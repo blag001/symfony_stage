@@ -19,7 +19,7 @@
 					<td>{{ etudiant.code }}</td>
 					<td>{{ etudiant.nom }}</td>
 					<td>{{ etudiant.prenom }}</td>
-					<td><a href="{{ path('Etudiant_ConsulterInfosE', { 'code': etudiant.code }) }}"> Voir</td>
+					<td><a href="{{ path('Etudiant_ConsulterInfosE', { 'code': etudiant.code , 'section':etudiant.section.libelle}) }}"> Voir</td>
 				</tr>
 			{% endfor %}
 		</tbody>
