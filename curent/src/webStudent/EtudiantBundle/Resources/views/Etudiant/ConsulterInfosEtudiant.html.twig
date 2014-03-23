@@ -1,0 +1,27 @@
+{# src/webStudent/EtudiantBundle/Resources/Etudiant/index.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Voici les informations de l'étudiant</title>
+	</head>
+	<table border='1'>
+		<thead>
+			<tr>
+				<th>Adresse</th>
+				<th>Numero de telephone</th>
+				<th>Mail</th>
+				<th>Section</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for etudiant in etudiant %}
+				<tr>
+					<td>{{ etudiant.adresse }}</td>
+					<td>{{ etudiant.tel}}</td>
+					<td>{{ etudiant.mail}}</td>
+					<td>{{ etudiant.section.libelle}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</html>

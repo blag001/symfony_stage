@@ -1,0 +1,7 @@
+parameters:
+#    web_student_stage.example.class: webStudent\StageBundle\Example
+
+services:
+#    web_student_stage.example:
+#        class: %web_student_stage.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

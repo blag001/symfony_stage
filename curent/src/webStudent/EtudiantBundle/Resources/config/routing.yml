@@ -1,0 +1,36 @@
+web_student_etudiant_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: webStudentEtudiantBundle:Default:index }
+Salut:
+    pattern:  /salut/{name}
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:index }
+AuRevoir:
+    pattern:  /aurevoir/{name}
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:aurevoir }
+Etudiant_accueil:
+    path:    /etudiant/accueil
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:index }
+Etudiant_consulter:
+    path:    /etudiant/stage/{id}
+    defaults: { _controller:webStudentEtudiantBundle:Etudiant:consulter }
+Etudiant_ajouter:
+    path:    /etudiant/ajouterEtudiant
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:ajouterEtudiant }
+Etudiant_modifier:
+    path:    /etudiant/modifier
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:modifier }
+Etudiant_promo:
+    path:    /etudiant/promo/{id}/{promo}
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:afficher }
+Etudiant_Ajout:
+    path:     /etudiant/ajouter/{name}
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:ajouterSection }
+Etudiant_Id:
+    path:    /etudiant/show/{nom}
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:find }
+Etudiant_ConsulterE:
+    path:    /etudiant/consulterEtudiant
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:consulterEtudiant }
+Etudiant_ConsulterInfosE:
+    path:    /etudiant/consulterEtudiantInfos/{code}/{section}
+    defaults: { _controller: webStudentEtudiantBundle:Etudiant:consulterEtudiantInfos }
