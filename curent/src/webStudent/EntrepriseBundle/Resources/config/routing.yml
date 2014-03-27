@@ -1,3 +1,7 @@
 web_student_entreprise_homepage:
     pattern:  /entreprise/hello/{name}
     defaults: { _controller: webStudentEntrepriseBundle:Default:index }
+
+Entreprise_ConsulterE:
+    path:    /entreprise/consulterEntreprise
+    defaults: { _controller: webStudentEntrepriseBundle:Entreprise:consulterEntreprise }

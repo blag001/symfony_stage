@@ -1,14 +1,11 @@
-{# src/webStudent/EtudiantBundle/Resources/Etudiant/index.html.twig #}
-<!DOCTYPE html>
-<html>
-    <head>
-	<title>Bienvenue sur votre 3eme page créée avec Symfony !</title>
-	</head>
-	<body>
-	<hl>Salut les stage</hl>
-	
-	<p>
-	Félicitation, vous avez réussi à créer une première page. Vous avez compris?!?
-	</p>
-	</body>
-</html>
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<br/>
+	Bienvenue sur l'application de gestion de stages ici vous pourrez:
+		<ul>
+		<li> consulter la liste des stages</li>
+		<li> consulter la liste des étudiants</li>
+		<li> consulter la liste des entreprises</li>
+		</ul>
+	{% endblock %}

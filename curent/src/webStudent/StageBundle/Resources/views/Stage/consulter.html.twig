@@ -1,9 +1,8 @@
-
 {% extends "layout.html.twig" %}
 
 {% block content %}
 <br/>
-<a href="../stage/ajouterStage">Ajouter un stage</a>
+
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -15,14 +14,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			{% for stage in listeStages %}
+			
 				<tr>
-					<td>{{ stage.mission }}</td>
-					<td>{{ stage.note }}</td>
-					<td>{{ stage.dateDebut }}</td>
-					<td>{{ stage.dateFin }}</td>
+					<td>{{ mission }}</td>
+					<td>{{ note }}</td>
+					<td>{{ dateDebut }}</td>
+					<td>{{ dateFin }}</td>
+					
+					
 				</tr>
-			{% endfor %}
+			
 		</tbody>
 	</table>
 	{% endblock %}
