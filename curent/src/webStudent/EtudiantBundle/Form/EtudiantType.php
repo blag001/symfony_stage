@@ -45,5 +45,6 @@ class EtudiantType extends AbstractType
     {
         return 'webstudent_etudiantbundle_etudiant';
     }
+
 	
 }
