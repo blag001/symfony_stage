@@ -1,9 +1,7 @@
 {# src/webStudent/StageBundle/Resources/Stage/index.html.twig #}
-<!DOCTYPE html>
-<html>
-    <head>
-	<title>Voici les stages</title>
-	</head>
+{% extends "layout.html.twig" %}
+
+{% block content %}
 	<table border='1'>
 		<thead>
 			<tr>
@@ -19,10 +17,10 @@
 				<tr>
 					<td>{{ stage.mission }}</td>
 					<td>{{ stage.note }}</td>
-					<td>{{ stage.date_debut }}</td>
-					<td>{{ stage.date_fin }}</td>
+					<td>{{ stage.dateDebut }}</td>
+					<td>{{ stage.dateFin }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-</html>
+	{% endblock %}

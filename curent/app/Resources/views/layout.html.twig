@@ -2,12 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Gestion de stage{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+		{% block menu %}<a href="consulterStage">consulter les stages</a>{% endblock%}
+        {% block content %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
