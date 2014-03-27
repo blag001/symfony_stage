@@ -10,14 +10,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
---
--- Contenu de la table `etudiant`
---
-
-INSERT INTO `etudiant` (`id`) VALUES
-(1),
-(2),
-(3);
 
 --
 -- Contenu de la table `section`
@@ -38,3 +30,13 @@ INSERT INTO `utilisateur` (`id`, `code`, `section_id`, `discr`, `nom`, `prenom`,
 (1, '125', 7, 'etudiant', 'Lucie', 'Heck', '56 avenue aristide briand 14800 Touques', '0636569874', 'Heck@gmail.com'),
 (2, '124', 9, 'etudiant', 'Jean', 'Durand', '18 rue de la paix 7500 Paris', '0256987456', 'Durand@gmail.com'),
 (3, '123', 10, 'etudiant', 'Phillipe', 'Michel', '14 avenue de la republique 14000 Caen', '062125698', 'Michel@gmail.com');
+
+
+--
+-- Contenu de la table `etudiant`
+--
+
+INSERT INTO `etudiant` (`id`) VALUES
+(1),
+(2),
+(3);
