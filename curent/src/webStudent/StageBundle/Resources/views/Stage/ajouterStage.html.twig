@@ -2,14 +2,33 @@
 
 {% block content %}
 
- 
+<h3>Formulaire d'ajout de stage</h3>
 <br/>
-  <form role="form" method="post" {{ form_enctype(form) }}>
-  <div class="form-group">
-	{{ form_widget(form) }}
-
-    <input type="submit" class="btn btn-default" />
-	</div>
-  </form>
-
+<form role="form" method="post" {{ form_enctype(form) }}>
+	<table class="table table-striped">
+		<tr>
+			<th>Mission</th>
+			<td>{{ form_widget(form.mission) }}</td>
+		</tr>
+		<tr>
+			<th>Note (sur 5)</th>
+			<td>{{ form_widget(form.note) }}</td>
+		</tr>
+		<tr>
+			<th>Date début</th>
+			<td>{{ form_widget(form.dateDebut) }}</td>
+		</tr>
+		<tr>
+			<th>Date fin</th>
+			<td>{{ form_widget(form.dateFin) }}</td>
+		</tr>
+		
+		<td><input type="submit" class="btn btn-default" value="valider" /></td>
+		<td> <input type="reset" name="reset" class="btn btn-default" value="effacer">
+		</td>
+		</tr>
+	</table>
+	{{ form_rest(form) }}
+</form>
+<p><a href="{{ asset('app_dev.php/stage/consulterStage' ) }}"> Retour</p>
 {% endblock %}

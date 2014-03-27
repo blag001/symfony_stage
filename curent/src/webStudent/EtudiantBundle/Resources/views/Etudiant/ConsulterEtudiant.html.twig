@@ -1,12 +1,9 @@
-{# src/webStudent/EtudiantBundle/Resources/Etudiant/index.html.twig #}
-<!DOCTYPE html>
-<html>
-    <head>
-	<title>Voici les etudiant que vous avez selectionné</title>
-	</head>
-	<p>Rechercher un  étudiant:<p>
-	<p><strong>Liste des étudiants:</strong></p>
-	<table border='1'>
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<br/>
+<a href="{{ path('Etudiant_ajouter') }}"> Ajouter Etudiant</a>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Code</th>
@@ -26,5 +23,4 @@
 			{% endfor %}
 		</tbody>
 	</table>
-<p><a href="{{ path('Etudiant_ajouter') }}"> Ajouter Etudiant</p>
-</html>
+{% endblock %}
