@@ -147,7 +147,7 @@ public function consulterEtudiantInfosAction($code)
    		 'etudiant' => $etudiant
   		));
 }
-public function ajouterEtudiantAction()
+/*public function ajouterEtudiantAction()
   {
     $etudiant = new Etudiant();
 	// On crée le FormBuilder grâce à la méthode du contrôleur createFormBuilder
@@ -174,6 +174,6 @@ public function ajouterEtudiantAction()
 
 	// à compléter pour soumettre le formulaire voir ci-dessous.
 	
-  }
+  }*/
 
 }
