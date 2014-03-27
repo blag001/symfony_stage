@@ -1,0 +1,28 @@
+{# src/webStudent/StageBundle/Resources/Stage/index.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Voici les stages</title>
+	</head>
+	<table border='1'>
+		<thead>
+			<tr>
+				
+				<th>Mission</th>
+				<th>Note</th>
+				<th>Date début</th>
+				<th>Date Fin</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for stage in listeStages %}
+				<tr>
+					<td>{{ stage.mission }}</td>
+					<td>{{ stage.note }}</td>
+					<td>{{ stage.date_debut }}</td>
+					<td>{{ stage.date_fin }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</html>

@@ -18,5 +18,19 @@ class StageController extends Controller
     // Puis on passera l'etudiant à la vue pour qu'elle puisse l'afficher
     return new Response("Affichage du satge n°: ".$id.".");
     }
+	
+	public function consulterStageAction()
+{
+	$repository = $this->getDoctrine()
+                   ->getManager()
+                   ->getRepository('webStudentStageBundle:Stage');
+
+    $listeStages = $repository->findAll();
+	//$etudiant = $repository;
+     
+  	return $this->render('webStudentStageBundle:Stage:ConsulterStage.html.twig', array(
+   		 'listeStages' => $listeStages
+  		));
+}
 
 }
