@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use webStudent\EtudiantBundle\Entity\Section;
 use webStudent\EtudiantBundle\Entity\Utilisateur;
 use webStudent\EtudiantBundle\Entity\Etudiant;
+use webStudent\EtudiantBundle\Form\EtudiantType;
 
 class EtudiantController extends Controller
 {
@@ -72,7 +73,7 @@ class EtudiantController extends Controller
    		 'id' => $section->getNom()
   		));
 }
-	public function ajouterEtudiantAction()
+	/*public function ajouterEtudiantAction()
 {
    	// Etape 0 – creation de l'objet Section
 	$section = new Section();
@@ -96,7 +97,7 @@ class EtudiantController extends Controller
    	 $em->flush();
    
 	return $this->render('webStudentEtudiantBundle:Etudiant:index.html.twig');
-	}
+	}*/
 	public function findAction($nom)
 	{
 		$repository = $this->getDoctrine()
@@ -134,12 +135,12 @@ public function consulterEtudiantAction()
    		 'listeEtudiants' => $listeEtudiants
   		));
 }
-public function consulterEtudiantInfosAction($code)
+public function consulterEtudiantInfosAction($id)
 {
 	$repository = $this->getDoctrine()
                    ->getManager()
                    ->getRepository('webStudentEtudiantBundle:Etudiant');
-    $etudiant = $repository->findByCode($code);
+    $etudiant = $repository->findById($id);
      //var_dump($etudiant);
 	//$etudiant = $repository;
      
@@ -147,33 +148,43 @@ public function consulterEtudiantInfosAction($code)
    		 'etudiant' => $etudiant
   		));
 }
-/*public function ajouterEtudiantAction()
-  {
-    $etudiant = new Etudiant();
-	// On crée le FormBuilder grâce à la méthode du contrôleur createFormBuilder
-	// equivaut à dire de créer un formulaire autour de l'objet $stage
-	$formBuilder = $this->createFormBuilder($etudiant);
- 
-  // On ajoute les champs de l'entité que l'on veut à notre formulaire
-  $formBuilder
-		->add('libelle',       'text', array('required' => false))///ici!!!!!!!!!!
-    		->add('dateDebut',        'date',array(
-								'input'  => 'datetime',
-								'widget' => 'single_text',
-								'format' => 'dd/MM/yyyy'))
-		->add('dateFin',        'date')
-    		->add('note',       'text');
+public function ajouterEtudiantAction()
+{
+	$etudiant = new Etudiant ();
+	$form = $this->createForm(new EtudiantType, $etudiant);
+	
+	/**
+	***	INSTRUCTIONS DE SOUMISSION DU FORMULAIRE
+	**/
+
+	// 1. On récupère la requête HTTP
+    	$request = $this->get('request');
    
-  	// À partir du formBuilder, on génère le formulaire
-	$form = $formBuilder->getForm();
-	
-	// On passe la méthode createView() du formulaire à la vue afin qu'elle puisse afficher le 	formulaire toute seule
-  	return $this->render('webStageEtudiantBundle:Etudiant:ajouterStage.html.twig', array(
-    	'form' => $form->createView(),
-  						));
-
-	// à compléter pour soumettre le formulaire voir ci-dessous.
-	
-  }*/
-
+    // 2. On vérifie qu'elle est de type POST
+    if ($request->getMethod() == 'POST') {
+      // 3. On fait le lien Requête <-> Formulaire
+      // À partir de maintenant, la variable $etudiant contient les valeurs entrées dans le 	formulaire par le visiteur
+      $form->bind($request);
+ 
+      // On vérifie que les valeurs entrées sont correctes
+      if ($form->isValid()) {
+        // On enregistre notre objet $etudiant dans la base de données
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($etudiant);
+        $em->flush();
+ 
+        // On redirige vers la page de visualisation de l'article nouvellement créé
+  return $this->redirect($this->generateUrl('Etudiant_ConsulterE', array('id' => $etudiant->getId())));
+      }
+    }
+ 
+    // À ce point là :
+    // - Soit la requête est de type GET, donc le visiteur vient d'arriver sur la page et veut voir le formulaire
+    // - Soit la requête est de type POST, mais le formulaire n'est pas valide, donc on l'affiche de nouveau
+ 
+    return $this->render('webStudentEtudiantBundle:Etudiant:ajouterEtudiant.html.twig', array(
+    'form' => $form->createView(),
+   
+     ));
+  }
 }

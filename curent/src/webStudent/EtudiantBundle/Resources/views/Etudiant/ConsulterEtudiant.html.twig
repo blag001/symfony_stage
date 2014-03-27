@@ -18,12 +18,13 @@
 		<tbody>
 			{% for etudiant in listeEtudiants %}
 				<tr>
-					<td>{{ etudiant.code }}</td>
+					<td>{{ etudiant.id }}</td>
 					<td>{{ etudiant.nom }}</td>
 					<td>{{ etudiant.prenom }}</td>
-					<td><a href="{{ path('Etudiant_ConsulterInfosE', { 'code': etudiant.code , 'section':etudiant.section.libelle}) }}"> Voir</td>
+					<td><a href="{{ path('Etudiant_ConsulterInfosE', { 'id': etudiant.id , 'section':etudiant.section.libelle}) }}"> Voir</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
+<p><a href="{{ path('Etudiant_ajouter') }}"> Ajouter Etudiant</p>
 </html>

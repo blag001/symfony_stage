@@ -26,12 +26,6 @@ class Utilisateur
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="code", type="string", length=5)
-     */
-    private $code;
 	
 	 /**
      * @ORM\ManyToOne(targetEntity="webStudent\EtudiantBundle\Entity\Section",inversedBy="utilisateurs"))
@@ -160,28 +154,6 @@ class Utilisateur
         return $this;
     }
 
-    /**
-     * Set code
-     *
-     * @param string $code
-     * @return Utilisateur
-     */
-    public function setCode($code)
-    {
-        $this->code = $code;
-    
-        return $this;
-    }
-
-    /**
-     * Get code
-     *
-     * @return string 
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
 
     /**
      * Set section
@@ -209,7 +181,7 @@ class Utilisateur
 	    /**
      * @var string
      *
-     * @ORM\Column(name="code", type="string", length=20)
+     * 
      */
     public function getNom()
     {
