@@ -1,9 +1,15 @@
-{# src/webStudent/EtudiantBundle/Resources/views/Etudiant/ajouterEtudiant.html.twig #}
+{% extends "layout.html.twig" %}
 
-<h3>Formulaire d'ajout d'étudiant</h3>
-<div class="well">
-  <form method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <input type="submit" class="btn btn-primary" />
+{% block content %}
+
+ <p><h3>Formulaire d'ajout d'étudiant</h3></p>
+<br/>
+  <form role="form" method="post" {{ form_enctype(form) }}>
+  <div class="form-group">
+	{{ form_widget(form) }}
+
+    <input type="submit" class="btn btn-default" />
+	</div>
   </form>
-</div>
+<p><a href="{{ path('Etudiant_ConsulterE' ) }}"> Retour</p>
+{% endblock %}

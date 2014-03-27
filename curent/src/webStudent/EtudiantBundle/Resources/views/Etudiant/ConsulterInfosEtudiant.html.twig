@@ -1,12 +1,12 @@
-{# src/webStudent/EtudiantBundle/Resources/Etudiant/index.html.twig #}
-<!DOCTYPE html>
-<html>
+{% extends "layout.html.twig" %}
+
+{% block content %}
     <head>
 	<title>Voici les informations de l'étudiant</title>
 	</head>
 	{% for etudiant in etudiant %}
 	<p>Voici les informations de l'étudiant: <strong>{{ etudiant.nom }}</strong></p>
-	<table border='1'>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Adresse</th>
@@ -26,4 +26,4 @@
 		</tbody>
 	</table>
 <p><a href="{{ path('Etudiant_ConsulterE' ) }}"> Retour</p>
-</html>
+{% endblock %}
