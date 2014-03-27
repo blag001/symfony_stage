@@ -9,7 +9,7 @@ use webStudent\StageBundle\Form\StageType;
 
 class StageController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
         //return new Response("Salut tout le monde stage");
 		return $this->render('webStudentStageBundle:Stage:index.html.twig');
