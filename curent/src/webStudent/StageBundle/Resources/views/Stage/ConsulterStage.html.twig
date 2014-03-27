@@ -3,7 +3,7 @@
 
 {% block content %}
 <br/>
-<a href="../stage/ajouterStage"><h1>Ajouter un stage</h1></a>
+<a href="{{ asset('app_dev.php/stage/ajouterStage') }}">Ajouter un stage</a>
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -21,6 +21,7 @@
 					<td>{{ stage.note }}</td>
 					<td>{{ stage.dateDebut }}</td>
 					<td>{{ stage.dateFin }}</td>
+					
 				</tr>
 			{% endfor %}
 		</tbody>
