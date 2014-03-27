@@ -1,10 +1,15 @@
-<h3>Formulaire de stage</h3>
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
  
-<div class="well">
-  <form method="post" {{ form_enctype(form) }}>
-  
+<br/>
+  <form role="form" method="post" {{ form_enctype(form) }}>
+  <div class="form-group">
 	{{ form_widget(form) }}
 
-    <input type="submit" class="btn btn-primary" />
+    <input type="submit" class="btn btn-default" />
+	</div>
   </form>
-</div>
+
+{% endblock %}
