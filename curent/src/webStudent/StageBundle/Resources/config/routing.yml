@@ -5,7 +5,7 @@ SalutStage:
     pattern:  /salutStage/{name}
     defaults: { _controller: webStudentStageBundle:Stage:index }
 Stage_accueil:
-    path:    /stage
+    path:    /stage/accueil
     defaults: { _controller: webStudentStageBundle:Stage:index }
 Stage_consulter:
     path:    /stage/stage/{id}
