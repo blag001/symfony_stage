@@ -34,3 +34,6 @@ Etudiant_ConsulterE:
 Etudiant_ConsulterInfosE:
     path:    /etudiant/consulterEtudiantInfos/{code}/{section}
     defaults: { _controller: webStudentEtudiantBundle:Etudiant:consulterEtudiantInfos }
+Etudiant_ajouter:
+    path:      /ajouterEtudiant
+    defaults:  { _controller: webStudentEtudiantBundle:Etudiant:ajouterEtudiant }
