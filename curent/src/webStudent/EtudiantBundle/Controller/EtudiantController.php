@@ -125,12 +125,12 @@ public function consulterEtudiantAction()
 {
 	$repository = $this->getDoctrine()
                    ->getManager()
-                   ->getRepository('webStudentEtudiantBundle:etudiant');
+                   ->getRepository('webStudentEtudiantBundle:Etudiant');
 
     $listeEtudiants = $repository->findAll();
 	//$etudiant = $repository;
      
-  	return $this->render('webStudentEtudiantBundle:etudiant:ConsulterEtudiant.html.twig', array(
+  	return $this->render('webStudentEtudiantBundle:Etudiant:ConsulterEtudiant.html.twig', array(
    		 'listeEtudiants' => $listeEtudiants
   		));
 }
@@ -138,12 +138,12 @@ public function consulterEtudiantInfosAction($code)
 {
 	$repository = $this->getDoctrine()
                    ->getManager()
-                   ->getRepository('webStudentEtudiantBundle:etudiant');
+                   ->getRepository('webStudentEtudiantBundle:Etudiant');
     $etudiant = $repository->findByCode($code);
      //var_dump($etudiant);
 	//$etudiant = $repository;
      
-  	return $this->render('webStudentEtudiantBundle:etudiant:ConsulterInfosEtudiant.html.twig', array(
+  	return $this->render('webStudentEtudiantBundle:Etudiant:ConsulterInfosEtudiant.html.twig', array(
    		 'etudiant' => $etudiant
   		));
 }
