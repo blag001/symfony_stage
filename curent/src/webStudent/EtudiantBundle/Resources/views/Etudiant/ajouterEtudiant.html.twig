@@ -2,14 +2,40 @@
 
 {% block content %}
 
- <p><h3>Formulaire d'ajout d'étudiant</h3></p>
+<h3>Formulaire d'ajout d'étudiant</h3>
 <br/>
-  <form role="form" method="post" {{ form_enctype(form) }}>
-  <div class="form-group">
-	{{ form_widget(form) }}
-
-    <input type="submit" class="btn btn-default" />
-	</div>
-  </form>
+<form role="form" method="post" {{ form_enctype(form) }}>
+	<table class="table table-striped">
+		<tr>
+			<th>Nom</th>
+			<td>{{ form_widget(form.nom) }}</td>
+		</tr>
+		<tr>
+			<th>Prenom</th>
+			<td>{{ form_widget(form.prenom) }}</td>
+		</tr>
+		<tr>
+			<th>Adresse</th>
+			<td>{{ form_widget(form.adresse) }}</td>
+		</tr>
+		<tr>
+			<th>Tel</th>
+			<td>{{ form_widget(form.tel) }}</td>
+		</tr>
+		<tr>
+			<th>Mail</th>
+			<td>{{ form_widget(form.mail) }}</td>
+		</tr>
+		<tr>
+			<th>Section</th>
+			<td>{{ form_widget(form.section) }}</td>
+		</tr>
+		<td><input type="submit" class="btn btn-default" value="valider" /></td>
+		<td> <input type="reset" name="reset" class="btn btn-default" value="effacer">
+		</td>
+		</tr>
+	</table>
+	{{ form_rest(form) }}
+</form>
 <p><a href="{{ path('Etudiant_ConsulterE' ) }}"> Retour</p>
 {% endblock %}
