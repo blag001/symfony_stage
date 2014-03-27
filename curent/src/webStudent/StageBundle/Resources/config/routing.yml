@@ -19,3 +19,6 @@ Stage_modifier:
 Stage_consulterS:
     path:    /stage/consulterStage
     defaults: { _controller: webStudentStageBundle:Stage:consulterStage }
+Stage_ajouterS:
+    path:    /stage/ajouterStage
+    defaults: { _controller: webStudentStageBundle:Stage:ajouterStage }
