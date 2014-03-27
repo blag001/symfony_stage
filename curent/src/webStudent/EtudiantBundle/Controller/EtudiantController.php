@@ -147,4 +147,33 @@ public function consulterEtudiantInfosAction($code)
    		 'etudiant' => $etudiant
   		));
 }
+public function ajouterEtudiantAction()
+  {
+    $etudiant = new Etudiant();
+	// On crée le FormBuilder grâce à la méthode du contrôleur createFormBuilder
+	// equivaut à dire de créer un formulaire autour de l'objet $stage
+	$formBuilder = $this->createFormBuilder($etudiant);
+ 
+  // On ajoute les champs de l'entité que l'on veut à notre formulaire
+  $formBuilder
+		->add('libelle',       'text', array('required' => false))///ici!!!!!!!!!!
+    		->add('dateDebut',        'date',array(
+								'input'  => 'datetime',
+								'widget' => 'single_text',
+								'format' => 'dd/MM/yyyy'))
+		->add('dateFin',        'date')
+    		->add('note',       'text');
+   
+  	// À partir du formBuilder, on génère le formulaire
+	$form = $formBuilder->getForm();
+	
+	// On passe la méthode createView() du formulaire à la vue afin qu'elle puisse afficher le 	formulaire toute seule
+  	return $this->render('webStageEtudiantBundle:Etudiant:ajouterStage.html.twig', array(
+    	'form' => $form->createView(),
+  						));
+
+	// à compléter pour soumettre le formulaire voir ci-dessous.
+	
+  }
+
 }

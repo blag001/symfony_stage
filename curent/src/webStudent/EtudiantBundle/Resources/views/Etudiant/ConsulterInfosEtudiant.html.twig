@@ -4,6 +4,8 @@
     <head>
 	<title>Voici les informations de l'étudiant</title>
 	</head>
+	{% for etudiant in etudiant %}
+	<p>Voici les informations de l'étudiant: {{ etudiant.nom }}</p>
 	<table border='1'>
 		<thead>
 			<tr>
@@ -14,7 +16,6 @@
 			</tr>
 		</thead>
 		<tbody>
-			{% for etudiant in etudiant %}
 				<tr>
 					<td>{{ etudiant.adresse }}</td>
 					<td>{{ etudiant.tel}}</td>
@@ -24,4 +25,5 @@
 			{% endfor %}
 		</tbody>
 	</table>
+<p><a href="{{ path('Etudiant_ConsulterE' ) }}"> Retour</p>
 </html>
