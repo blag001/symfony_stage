@@ -1,0 +1,3 @@
+web_student_entreprise_homepage:
+    pattern:  /entreprise/hello/{name}
+    defaults: { _controller: webStudentEntrepriseBundle:Default:index }

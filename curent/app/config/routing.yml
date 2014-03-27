@@ -1,3 +1,7 @@
+web_student_entreprise:
+    resource: "@webStudentEntrepriseBundle/Resources/config/routing.yml"
+    prefix:   /
+
 web_student_stage:
     resource: "@webStudentStageBundle/Resources/config/routing.yml"
     prefix:   /
