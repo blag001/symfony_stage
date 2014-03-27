@@ -32,7 +32,7 @@ Etudiant_ConsulterE:
     path:    /etudiant/consulterEtudiant
     defaults: { _controller: webStudentEtudiantBundle:Etudiant:consulterEtudiant }
 Etudiant_ConsulterInfosE:
-    path:    /etudiant/consulterEtudiantInfos/{code}/{section}
+    path:    /etudiant/consulterEtudiantInfos/{id}/{section}
     defaults: { _controller: webStudentEtudiantBundle:Etudiant:consulterEtudiantInfos }
 Etudiant_ajouter:
     path:      /ajouterEtudiant
