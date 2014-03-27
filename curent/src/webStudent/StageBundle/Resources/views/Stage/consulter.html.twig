@@ -1,0 +1,29 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<br/>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				
+				<th>Mission</th>
+				<th>Note</th>
+				<th>Date début</th>
+				<th>Date Fin</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>{{ mission }}</td>
+					<td>{{ note }}</td>
+					<td>{{ dateDebut }}</td>
+					<td>{{ dateFin }}</td>
+					
+					
+				</tr>
+			
+		</tbody>
+	</table>
+	{% endblock %}

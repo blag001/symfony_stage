@@ -9,18 +9,31 @@ use webStudent\StageBundle\Form\StageType;
 
 class StageController extends Controller
 {
-    public function indexAction()
+    public function indexAction($name)
     {
         //return new Response("Salut tout le monde stage");
 		return $this->render('webStudentStageBundle:Stage:index.html.twig');
     }
 	public function consulterAction($id)
     {
-    // $id vaut 5 si l'on a appelé l'URL /Etudiant/stage/5
-    // Ici, on récupèrera depuis la base de données l'étudiant correspondant à l'id $id
-    // Puis on passera l'etudiant à la vue pour qu'elle puisse l'afficher
-    return new Response("Affichage du stage n°: ".$id.".");
-    }
+    	$repository = $this->getDoctrine()
+                   ->getManager()
+                   ->getRepository('webStudentStageBundle:Stage');
+
+	// On récupère l'entité correspondant à l'id $id
+	$stage = $repository->find($id);
+
+  	// Ou null si aucun stage n'a été trouvé avec l'id $id
+ 	 if($stage === null)
+ 	 {
+   	 throw $this->createNotFoundException('Stage[id='.$id.'] inexistant.');
+  	}
+     
+  	return $this->render('webStudentStageBundle:Stage:consulter.html.twig', array('mission' => $stage->getMission(),
+   		 'note' => $stage->getNote(), 'dateDebut' => $stage->getDateDebut(), 'dateFin' => $stage->getDateFin()
+  		));
+}
+    
 	
 	public function consulterStageAction()
 {
