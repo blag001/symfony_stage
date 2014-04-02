@@ -4,7 +4,7 @@ namespace webStudent\EntrepriseBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use webStudent\EntrepriseBundle\Entity\Section;
+use webStudent\EntrepriseBundle\Entity\Entreprise;
 
 class EntrepriseController extends Controller
 {
@@ -24,9 +24,9 @@ class EntrepriseController extends Controller
 
         if ($listeEntreprises === null) {
            throw $this->createNotFoundException('Entreprise inexistant.');
-           
+
         }
-         
+
         return $this->render('webStudentEntrepriseBundle:Entreprise:ConsulterEntreprise.html.twig', array(
              'listeEntreprises' => $listeEntreprises
             ));

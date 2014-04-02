@@ -1,0 +1,31 @@
+
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<br/>
+<a href="{{ asset('app_dev.php/entreprise/ajouterEntreprise') }}">Ajouter une entreprise</a>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+
+				<th>Raison social</th>
+				<th>Rue</th>
+				<th>Ville</th>
+				<th>Telephone</th>
+				<th>Mail</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for entreprise in listeEntreprises %}
+				<tr>
+					<td>{{ entreprise.raisonSocial }}</td>
+					<td>{{ entreprise.rue }}</td>
+					<td>{{ entreprise.ville }}</td>
+					<td>{{ entreprise.telephone }}</td>
+					<td>{{ entreprise.mail }}</td>
+
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% endblock %}
