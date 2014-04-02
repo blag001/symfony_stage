@@ -5,20 +5,20 @@ SalutEntreprise:
     pattern:  /salutEntreprise/{name}
     defaults: { _controller: webStudentEntrepriseBundle:Entreprise:index }
 Entreprise_accueil:
-    path:    /Entreprise/accueil
+    path:    /entreprise/accueil
     defaults: { _controller: webStudentEntrepriseBundle:Entreprise:index }
 Entreprise_consulter:
-    path:    /Entreprise/consulter/{id}
+    path:    /entreprise/consulter/{id}
     defaults: { _controller:webStudentEntrepriseBundle:Entreprise:consulter }
 Entreprise_ajouter:
-    path:    /Entreprise/ajouter
+    path:    /entreprise/ajouter
     defaults: { _controller: webStudentEntrepriseBundle:Entreprise:ajouter }
 Entreprise_modifier:
-    path:    /Entreprise/modifier
+    path:    /entreprise/modifier
     defaults: { _controller: webStudentEntrepriseBundle:Entreprise:modifier }
 Entreprise_consulterS:
-    path:    /Entreprise/consulterEntreprise
+    path:    /entreprise/consulterEntreprise
     defaults: { _controller: webStudentEntrepriseBundle:Entreprise:consulterEntreprise }
 Entreprise_ajouterS:
-    path:    /Entreprise/ajouterEntreprise
+    path:    /entreprise/ajouterEntreprise
     defaults: { _controller: webStudentEntrepriseBundle:Entreprise:ajouterEntreprise }
