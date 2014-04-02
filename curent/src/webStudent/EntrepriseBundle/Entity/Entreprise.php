@@ -1,6 +1,6 @@
 <?php
 
-namespace webStudent\EtudiantBundle\Entity;
+namespace webStudent\EntrepriseBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Entreprise
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="webStudent\EtudiantBundle\Entity\EntrepriseRepository")
+ * @ORM\Entity(repositoryClass="webStudent\EntrepriseBundle\Entity\EntrepriseRepository")
  */
 class Entreprise
 {
@@ -67,7 +67,7 @@ class Entreprise
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -83,14 +83,14 @@ class Entreprise
     public function setRaisonSocial($raisonSocial)
     {
         $this->raisonSocial = $raisonSocial;
-    
+
         return $this;
     }
 
     /**
      * Get raisonSocial
      *
-     * @return string 
+     * @return string
      */
     public function getRaisonSocial()
     {
@@ -106,14 +106,14 @@ class Entreprise
     public function setRue($rue)
     {
         $this->rue = $rue;
-    
+
         return $this;
     }
 
     /**
      * Get rue
      *
-     * @return string 
+     * @return string
      */
     public function getRue()
     {
@@ -129,14 +129,14 @@ class Entreprise
     public function setCodePostal($codePostal)
     {
         $this->codePostal = $codePostal;
-    
+
         return $this;
     }
 
     /**
      * Get codePostal
      *
-     * @return string 
+     * @return string
      */
     public function getCodePostal()
     {
@@ -152,14 +152,14 @@ class Entreprise
     public function setVille($ville)
     {
         $this->ville = $ville;
-    
+
         return $this;
     }
 
     /**
      * Get ville
      *
-     * @return string 
+     * @return string
      */
     public function getVille()
     {
@@ -175,14 +175,14 @@ class Entreprise
     public function setTelephone($telephone)
     {
         $this->telephone = $telephone;
-    
+
         return $this;
     }
 
     /**
      * Get telephone
      *
-     * @return string 
+     * @return string
      */
     public function getTelephone()
     {
@@ -198,14 +198,14 @@ class Entreprise
     public function setMail($mail)
     {
         $this->mail = $mail;
-    
+
         return $this;
     }
 
     /**
      * Get mail
      *
-     * @return string 
+     * @return string
      */
     public function getMail()
     {
