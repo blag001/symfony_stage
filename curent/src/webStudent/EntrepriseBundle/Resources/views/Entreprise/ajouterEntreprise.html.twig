@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+<h3>Formulaire d'ajout d'entreprise</h3>
+<br/>
+<form role="form" method="post" {{ form_enctype(form) }}>
+	<table class="table table-striped">
+		<tr>
+			<th>Raison social</th>
+			<td>{{ form_widget(form.raisonSocial) }}</td>
+		</tr>
+		<tr>
+			<th>Rue</th>
+			<td>{{ form_widget(form.rue) }}</td>
+		</tr>
+		<tr>
+			<th>Code Postal</th>
+			<td>{{ form_widget(form.codePostal) }}</td>
+		</tr>
+		<tr>
+			<th>Ville</th>
+			<td>{{ form_widget(form.ville) }}</td>
+		</tr>
+		<tr>
+			<th>Telephone</th>
+			<td>{{ form_widget(form.telephone) }}</td>
+		</tr>
+		<tr>
+			<th>Mail</th>
+			<td>{{ form_widget(form.mail) }}</td>
+		</tr>
+
+		<td><input type="submit" class="btn btn-default" value="valider" /></td>
+		<td> <input type="reset" name="reset" class="btn btn-default" value="effacer">
+		</td>
+		</tr>
+	</table>
+	{{ form_rest(form) }}
+</form>
+<p><a href="{{ asset('app_dev.php/entreprise/consulterEntreprise' ) }}"> Retour</p>
+{% endblock %}
