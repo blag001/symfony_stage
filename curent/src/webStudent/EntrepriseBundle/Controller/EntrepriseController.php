@@ -15,6 +15,7 @@ class EntrepriseController extends Controller
 		return $this->render('webStudentEntrepriseBundle:Entreprise:index.html.twig');
     }
 
+        // toutes en entreprises
     public function consulterEntrepriseAction()
     {
         $repository = $this->getDoctrine()
@@ -32,43 +33,69 @@ class EntrepriseController extends Controller
              'listeEntreprises' => $listeEntreprises
             ));
     }
-public function ajouterEntrepriseAction()
-{
-    $entreprise = new Entreprise ();
-    $form = $this->createForm(new EntrepriseType, $entreprise);
+        // consulter une entreprise
+    public function consulterAction($id)
+    {
+        $repository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('webStudentEntrepriseBundle:Entreprise');
 
-    /**
-    *** INSTRUCTIONS DE SOUMISSION DU FORMULAIRE
-    **/
+        // On récupère l'entité correspondant à l'id $id
+        $entreprise = $repository->find($id);
 
-    // 1. On récupère la requête HTTP
-    $request = $this->get('request');
-
-    // 2. On vérifie qu'elle est de type POST
-    if ($request->getMethod() == 'POST') {
-        // 3. On fait le lien Requête <-> Formulaire
-        // À partir de maintenant, la variable $etudiant contient les valeurs entrées dans le     formulaire par le visiteur
-        $form->bind($request);
-
-        // On vérifie que les valeurs entrées sont correctes
-        if ($form->isValid()) {
-            // On enregistre notre objet $etudiant dans la base de données
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entreprise);
-            $em->flush();
-
-            // On redirige vers la page de visualisation de l'article nouvellement créé
-            return $this->redirect($this->generateUrl('Entreprise_consulter', array('id' => $entreprise->getId())));
+        // Ou null si aucune entreprise n'a été trouvé avec l'id $id
+        if($entreprise === null){
+            throw $this->createNotFoundException('Entreprise[id='.$id.'] inexistant.');
         }
+
+        return $this->render('webStudentEntrepriseBundle:Entreprise:consulter.html.twig',
+            array(
+                'raisonSocial'   => $entreprise->getRaisonSocial(),
+                'rue'            => $entreprise->getRue(),
+                'codePostal'     => $entreprise->getCodePostal(),
+                'ville'          => $entreprise->getVille(),
+                'telephone'      => $entreprise->getTelephone(),
+                'mail'           => $entreprise->getMail(),
+                )
+            );
     }
+        // ajouter une entreprise
+    public function ajouterEntrepriseAction()
+    {
+        $entreprise = new Entreprise ();
+        $form = $this->createForm(new EntrepriseType, $entreprise);
 
-    // À ce point là :
-    // - Soit la requête est de type GET, donc le visiteur vient d'arriver sur la page et veut voir le formulaire
-    // - Soit la requête est de type POST, mais le formulaire n'est pas valide, donc on l'affiche de nouveau
+        /**
+        *** INSTRUCTIONS DE SOUMISSION DU FORMULAIRE
+        **/
 
-    return $this->render('webStudentEntrepriseBundle:Entreprise:ajouterEntreprise.html.twig', array(
-        'form' => $form->createView(),
-        ));
-}
+        // 1. On récupère la requête HTTP
+        $request = $this->get('request');
+
+        // 2. On vérifie qu'elle est de type POST
+        if ($request->getMethod() == 'POST') {
+            // 3. On fait le lien Requête <-> Formulaire
+            $form->bind($request);
+
+            // On vérifie que les valeurs entrées sont correctes
+            if ($form->isValid()) {
+                // On enregistre notre objet $etudiant dans la base de données
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entreprise);
+                $em->flush();
+
+                // On redirige vers la page de visualisation de l'article nouvellement créé
+                return $this->redirect($this->generateUrl('Entreprise_consulter', array('id' => $entreprise->getId())));
+            }
+        }
+
+        // À ce point là :
+        // - Soit la requête est de type GET, donc le visiteur vient d'arriver sur la page et veut voir le formulaire
+        // - Soit la requête est de type POST, mais le formulaire n'est pas valide, donc on l'affiche de nouveau
+
+        return $this->render('webStudentEntrepriseBundle:Entreprise:ajouterEntreprise.html.twig', array(
+            'form' => $form->createView(),
+            ));
+    }
 
 }

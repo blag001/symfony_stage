@@ -1,0 +1,33 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<br/>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+
+				<th>Raison social</th>
+				<th>Rue</th>
+				<th>Code Postal</th>
+				<th>Ville</th>
+				<th>Telephone</th>
+				<th>Mail</th>
+			</tr>
+		</thead>
+		<tbody>
+
+				<tr>
+					<td>{{ raisonSocial }}</td>
+					<td>{{ rue }}</td>
+					<td>{{ codePostal }}</td>
+					<td>{{ ville }}</td>
+					<td>{{ telephone }}</td>
+					<td>{{ mail }}</td>
+
+
+				</tr>
+
+		</tbody>
+	</table>
+	{% endblock %}
