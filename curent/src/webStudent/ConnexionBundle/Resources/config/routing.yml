@@ -1,3 +1,3 @@
-web_student_connexion_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: webStudentConnexionBundle:Default:index }
+Connexion_accueil:
+    path:    /connexion
+    defaults: { _controller: webStudentConnexionBundle:Connexion:index }

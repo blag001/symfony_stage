@@ -1,0 +1,25 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+<h3>Connexion</h3>
+<br/>
+<form role="form" method="post" {{ form_enctype(form) }}>
+	<table class="table table-striped">
+		<tr>
+			<th>Identifiant</th>
+			<td>{{ form_widget(form.login) }}</td>
+		</tr>
+		<tr>
+			<th>Mot de passe</th>
+			<td>{{ form_widget(form.password) }}</td>
+		</tr>
+
+		<tr>
+			<th></th>
+			<td><input type="submit" class="btn btn-default" value="valider" /></td>
+		</tr>
+	</table>
+	{{ form_rest(form) }}
+</form>
+{% endblock %}
