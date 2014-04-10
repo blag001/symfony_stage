@@ -24,7 +24,7 @@ class Membre
     /**
      * @var string
      *
-     * @ORM\Column(name="login", type="string", length=150)
+     * @ORM\Column(name="login", type="string", length=150, unique=true)
      */
     private $login;
 
@@ -39,7 +39,7 @@ class Membre
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -55,14 +55,14 @@ class Membre
     public function setLogin($login)
     {
         $this->login = $login;
-    
+
         return $this;
     }
 
     /**
      * Get login
      *
-     * @return string 
+     * @return string
      */
     public function getLogin()
     {
@@ -78,14 +78,14 @@ class Membre
     public function setPassword($password)
     {
         $this->password = $password;
-    
+
         return $this;
     }
 
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
