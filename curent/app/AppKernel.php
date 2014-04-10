@@ -20,6 +20,7 @@ class AppKernel extends Kernel
 
             new webStudent\StageBundle\webStudentStageBundle(),
             new webStudent\EntrepriseBundle\webStudentEntrepriseBundle(),
+            new webStudent\ConnexionBundle\webStudentConnexionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
